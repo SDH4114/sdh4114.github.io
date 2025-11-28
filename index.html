@@ -1,10 +1,971 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome!</title>
+  <meta charset="UTF-8" />
+  <title>SDH4114 — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide icons (обычная версия, не React) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Чуть-чуть донастройки шрифтов / фона */
+    body {
+      min-height: 100vh;
+      background-color: #000;
+      color: #fff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
-<body style="background:#111; color:white; text-align:center; padding-top:100px;">
-  <h1>Hello from sdh4114.github.io!</h1>
+<body>
+  <div class="min-h-screen bg-black text-white overflow-x-hidden font-mono">
+    <!-- Diagonal Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-orange-600/10 to-transparent transform rotate-12"></div>
+      <div class="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-blue-800/10 to-transparent transform -rotate-12"></div>
+      <div class="absolute top-1/2 left-1/4 w-96 h-1 bg-orange-500/20 transform -rotate-45"></div>
+      <div class="absolute top-1/3 right-1/4 w-64 h-1 bg-blue-500/20 transform rotate-45"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-orange-500/30">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-orange-500 animate-pulse"></div>
+          <span id="glitchText" class="text-2xl font-bold text-orange-500">
+            SDH4114
+          </span>
+        </div>
+        <div class="flex gap-6">
+          <button
+            data-section-btn="home"
+            class="nav-btn uppercase tracking-wider transition-all text-orange-500"
+          >
+            HOME
+          </button>
+          <button
+            data-section-btn="projects"
+            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
+          >
+            PROJECTS
+          </button>
+          <button
+            data-section-btn="about"
+            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
+          >
+            ABOUT
+          </button>
+          <button
+            data-section-btn="contact"
+            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
+          >
+            CONTACT
+          </button>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/SDH4114"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-orange-500 transition-colors"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://t.me/sdhaos4114"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-orange-500 transition-colors"
+          >
+            <i data-lucide="send" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://t.me/BreakLoop"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-orange-500 transition-colors"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section (HOME) -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center pt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 w-full">
+        <div class="relative">
+          <!-- Diagonal Orange Bars - Crossed -->
+          <div class="absolute -left-32 top-20 w-96 h-2 bg-orange-500 transform -rotate-45"></div>
+          <div class="absolute -left-24 top-12 w-80 h-1 bg-orange-400/60 transform -rotate-45"></div>
+
+          <div class="relative z-10">
+            <div class="inline-block mb-4">
+              <span
+                class="px-4 py-1 bg-orange-500/20 border border-orange-500 text-orange-500 text-sm uppercase tracking-wider"
+              >
+                プログラマー
+              </span>
+            </div>
+
+            <h1 class="text-8xl font-black mb-6 relative">
+              <span class="text-orange-500">DEVELOPER</span>
+              <div
+                class="absolute -bottom-4 left-0 w-32 h-1 bg-gradient-to-r from-orange-500 to-transparent"
+              ></div>
+            </h1>
+
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-16 h-1 bg-blue-500"></div>
+              <p class="text-2xl text-gray-400 uppercase tracking-wider">
+                Born 2010 / Baku
+              </p>
+            </div>
+
+            <p class="text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
+              Создаю
+              <span class="text-orange-500 font-bold">цифровые миры</span>
+              через код. Программист, художник, и исследователь
+              киберпространства.
+            </p>
+
+            <div class="flex gap-4 flex-wrap">
+              <button
+                data-goto="projects"
+                class="group px-8 py-4 bg-orange-500 hover:bg-orange-600 transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
+              >
+                Смотреть работы
+                <i
+                  data-lucide="chevron-right"
+                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                ></i>
+              </button>
+              <button
+                data-goto="contact"
+                class="px-8 py-4 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold"
+              >
+                Связаться
+              </button>
+            </div>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div
+            class="absolute -right-20 bottom-20 text-9xl font-black text-white/5 transform rotate-12"
+          >
+            2010
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="section hidden min-h-screen py-32 px-6"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
+            <div class="w-3 h-3 bg-orange-500"></div>
+            PROJECTS
+            <span class="text-2xl text-gray-500 ml-4">プロジェクト</span>
+          </h2>
+          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
+        </div>
+
+        <!-- Featured Projects -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-2">
+            <div class="w-2 h-2 bg-orange-500"></div>
+            FEATURED 特集
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Battlefield 64 -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
+              ></div>
+              <div class="p-6 relative z-10">
+                <div class="flex items-start justify-between mb-4">
+                  <h3
+                    class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
+                  >
+                    Battlefield 64
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114/Battlefield-64"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-orange-500 transition-colors"
+                  >
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Pixel Art шахматная игра с anime-визуалом и пастельными досками.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >HTML</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >CSS</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >JavaScript</span
+                  >
+                </div>
+                <div
+                  class="h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Glitch Strike -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
+              ></div>
+              <div class="p-6 relative z-10">
+                <div class="flex items-start justify-between mb-4">
+                  <h3
+                    class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
+                  >
+                    Glitch Strike: Operation Bug
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114/Glitch-Strike-Operation-Bug"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-orange-500 transition-colors"
+                  >
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Киберпанк проект с глитч-эффектами и мрачной атмосферой.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >WebGL</span
+                  >
+                </div>
+                <div
+                  class="h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Duck Of Apocalypse -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
+              ></div>
+              <div class="p-6 relative z-10">
+                <div class="flex items-start justify-between mb-4">
+                  <h3
+                    class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
+                  >
+                    Duck Of Apocalypse
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114/Duck-Of-Apocalypse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-orange-500 transition-colors"
+                  >
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Open source UI на Electron + xterm.js, ретро-терминал с
+                  киберпанк-атмосферой.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >Electron</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >xterm.js</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
+                    >Makefile</span
+                  >
+                </div>
+                <div
+                  class="h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <div class="w-2 h-2 bg-blue-500"></div>
+            MORE PROJECTS その他
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Mafiya Telegram Bot -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
+            >
+              <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <h3 class="text-lg font-bold text-orange-500">
+                    Mafiya Telegram Bot
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114/mafiya-telegram-bot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-blue-500 transition-colors"
+                  >
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-3 text-sm">
+                  Telegram бот для игры в мафию с полным функционалом.
+                </p>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >Python</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >Telegram API</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Neural Network Playground -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
+            >
+              <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <h3 class="text-lg font-bold text-orange-500">
+                    Neural Network Playground
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-blue-500 transition-colors"
+                  >
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-3 text-sm">
+                  Интерактивная визуализация работы нейронных сетей.
+                </p>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >TensorFlow.js</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >Canvas</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Retro Terminal Emulator -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
+            >
+              <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <h3 class="text-lg font-bold text-orange-500">
+                    Retro Terminal Emulator
+                  </h3>
+                  <a
+                    href="https://github.com/SDH4114"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-blue-500 transition-colors"
+                  >
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                </div>
+                <p class="text-gray-400 mb-3 text-sm">
+                  Эмулятор терминала в стиле киберпанк с кастомными командами.
+                </p>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >xterm.js</span
+                  >
+                  <span
+                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
+                    >CSS</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="mt-12 text-center">
+          <a
+            href="https://github.com/SDH4114?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+            Все репозитории на GitHub
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="section hidden min-h-screen py-32 px-6"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
+            <div class="w-3 h-3 bg-orange-500"></div>
+            ABOUT
+            <span class="text-2xl text-gray-500 ml-4">私について</span>
+          </h2>
+          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+          <div class="relative">
+            <div
+              class="absolute -top-8 -left-8 text-9xl font-black text-orange-500/10"
+            >
+              14
+            </div>
+            <div
+              class="relative z-10 bg-gradient-to-br from-gray-900 to-black border-l-4 border-orange-500 p-8"
+            >
+              <h3 class="text-3xl font-bold mb-4 text-orange-500">
+                Юный разработчик
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-4">
+                Родился в 2010 году в Баку. Программирование — это не только
+                навык, но и способ создавать новые миры.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Каждая строка кода — возможность воплотить идею в реальность,
+                каждый проект — новое приключение в цифровом мире.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div
+              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
+            >
+              <div class="flex items-center gap-4 mb-3">
+                <div class="w-2 h-2 bg-orange-500"></div>
+                <h4 class="text-xl font-bold text-white">Навыки 技能</h4>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >Python</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >React</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >Electron</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >Git</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >xterm.js</span
+                >
+                <span
+                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
+                  >Canvas API</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
+            >
+              <div class="flex items-center gap-4 mb-3">
+                <div class="w-2 h-2 bg-blue-500"></div>
+                <h4 class="text-xl font-bold text-white">Локация 位置</h4>
+              </div>
+              <p class="text-gray-300">Baku, Azerbaijan 🇦🇿</p>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
+            >
+              <div class="flex items-center gap-4 mb-3">
+                <div class="w-2 h-2 bg-orange-500"></div>
+                <h4 class="text-xl font-bold text-white">Возраст 年齢</h4>
+              </div>
+              <p class="text-gray-300">14 лет (Born 2010)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold mb-8 flex items-center gap-4">
+            <div class="w-2 h-2 bg-orange-500"></div>
+            ИНТЕРЕСЫ 趣味
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Программирование -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
+            >
+              <div
+                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
+              ></div>
+              <div class="relative z-10">
+                <i
+                  data-lucide="code"
+                  class="text-orange-500 mb-4 w-8 h-8"
+                ></i>
+                <h4
+                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
+                >
+                  Программирование
+                </h4>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  разработка
+                </p>
+              </div>
+            </div>
+
+            <!-- Рисование -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
+            >
+              <div
+                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
+              ></div>
+              <div class="relative z-10">
+                <i
+                  data-lucide="palette"
+                  class="text-orange-500 mb-4 w-8 h-8"
+                ></i>
+                <h4
+                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
+                >
+                  Рисование
+                </h4>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  творчество
+                </p>
+              </div>
+            </div>
+
+            <!-- Чтение -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
+            >
+              <div
+                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
+              ></div>
+              <div class="relative z-10">
+                <i
+                  data-lucide="book-open"
+                  class="text-orange-500 mb-4 w-8 h-8"
+                ></i>
+                <h4
+                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
+                >
+                  Чтение
+                </h4>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  литература
+                </p>
+              </div>
+            </div>
+
+            <!-- Эксперименты -->
+            <div
+              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
+            >
+              <div
+                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
+              ></div>
+              <div class="relative z-10">
+                <i
+                  data-lucide="terminal"
+                  class="text-orange-500 mb-4 w-8 h-8"
+                ></i>
+                <h4
+                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
+                >
+                  Эксперименты
+                </h4>
+                <p class="text-sm text-gray-500 uppercase tracking-wider">
+                  исследование
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="section hidden min-h-screen py-32 px-6"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
+            <div class="w-3 h-3 bg-orange-500"></div>
+            CONTACT
+            <span class="text-2xl text-gray-500 ml-4">連絡先</span>
+          </h2>
+          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- GitHub -->
+          <a
+            href="https://github.com/SDH4114"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
+            ></div>
+            <div class="p-8 relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <i
+                  data-lucide="github"
+                  class="text-orange-500 group-hover:scale-110 transition-transform w-10 h-10"
+                ></i>
+                <i
+                  data-lucide="external-link"
+                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
+                ></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
+              >
+                GitHub
+              </h3>
+              <p class="text-gray-400 font-mono">@SDH4114</p>
+              <div
+                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+              ></div>
+            </div>
+          </a>
+
+          <!-- Telegram -->
+          <a
+            href="https://t.me/sdhaos4114"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
+            ></div>
+            <div class="p-8 relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <i
+                  data-lucide="send"
+                  class="text-blue-500 group-hover:scale-110 transition-transform w-10 h-10"
+                ></i>
+                <i
+                  data-lucide="external-link"
+                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
+                ></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
+              >
+                Telegram
+              </h3>
+              <p class="text-gray-400 font-mono">@sdhaos4114</p>
+              <div
+                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+              ></div>
+            </div>
+          </a>
+
+          <!-- Telegram Channel -->
+          <a
+            href="https://t.me/BreakLoop"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
+            ></div>
+            <div class="p-8 relative z-10">
+              <div class="flex items-center justify-between mb-4">
+                <i
+                  data-lucide="message-circle"
+                  class="text-blue-500 group-hover:scale-110 transition-transform w-10 h-10"
+                ></i>
+                <i
+                  data-lucide="external-link"
+                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
+                ></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
+              >
+                Telegram Channel
+              </h3>
+              <p class="text-gray-400 font-mono">@BreakLoop</p>
+              <div
+                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
+              ></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Additional Info -->
+        <div
+          class="bg-gradient-to-br from-gray-900 to-black border-l-4 border-orange-500 p-8"
+        >
+          <h3 class="text-3xl font-bold mb-4 text-orange-500">
+            Давай создадим что-то крутое вместе!
+          </h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Всегда открыт к новым идеям и коллаборациям. Если у тебя есть
+            интересный проект или просто хочешь обсудить технологии — пиши в
+            любую из моих соцсетей!
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://t.me/sdhaos4114"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
+            >
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Написать в Telegram
+            </a>
+            <a
+              href="https://t.me/BreakLoop"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-6 py-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Подписаться на канал
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 px-6 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 bg-orange-500 animate-pulse"></div>
+            <span class="text-xl font-bold">SDH4114</span>
+          </div>
+
+          <div class="text-gray-500 text-sm uppercase tracking-wider">
+            2025 © Developer Portfolio • Hosted on GitHub Pages
+          </div>
+
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/SDH4114"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-orange-500 transition-colors"
+            >
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://t.me/sdhaos4114"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-orange-500 transition-colors"
+            >
+              <i data-lucide="send" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://t.me/BreakLoop"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-orange-500 transition-colors"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== JS: глитч + переключение секций + иконки ===== -->
+  <script>
+    // Lucide icons
+    lucide.createIcons();
+
+    // Глитч-текст
+    const glitchEl = document.getElementById("glitchText");
+    const original = "SDH4114";
+
+    function startGlitch() {
+      const chars =
+        "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let iterations = 0;
+      const interval = setInterval(() => {
+        const text = original
+          .split("")
+          .map((ch, index) => {
+            if (index < iterations) return original[index];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join("");
+        glitchEl.textContent = text;
+
+        if (iterations >= 7) {
+          clearInterval(interval);
+          glitchEl.textContent = original;
+        }
+        iterations += 1 / 4;
+      }, 70);
+    }
+
+    setInterval(startGlitch, 5000);
+
+    // Переключение секций
+    const sections = {
+      projects: document.getElementById("projects"),
+      about: document.getElementById("about"),
+      contact: document.getElementById("contact"),
+    };
+
+    function setActiveSection(name) {
+      // показываем / скрываем секции
+      Object.entries(sections).forEach(([key, el]) => {
+        if (!el) return;
+        if (key === name) el.classList.remove("hidden");
+        else el.classList.add("hidden");
+      });
+
+      // подсветка кнопок
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        const sec = btn.getAttribute("data-section-btn");
+        if (sec === name) {
+          btn.classList.remove("text-gray-400");
+          btn.classList.add("text-orange-500");
+        } else if (sec !== "home") {
+          btn.classList.add("text-gray-400");
+          btn.classList.remove("text-orange-500");
+        } else {
+          // home
+          if (name === "home") {
+            btn.classList.add("text-orange-500");
+            btn.classList.remove("text-gray-400");
+          } else {
+            btn.classList.remove("text-orange-500");
+            btn.classList.add("text-gray-400");
+          }
+        }
+      });
+    }
+
+    // Клики по навигации
+    document.querySelectorAll("[data-section-btn]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const sec = btn.getAttribute("data-section-btn");
+        if (sec === "home") {
+          setActiveSection("home");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          setActiveSection(sec);
+          const target = sections[sec];
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    });
+
+    // Кнопки "Смотреть работы" / "Связаться"
+    document.querySelectorAll("[data-goto]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const sec = btn.getAttribute("data-goto");
+        setActiveSection(sec);
+        const target = sections[sec];
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // Стартовое состояние — только home
+    setActiveSection("home");
+  </script>
 </body>
 </html>
