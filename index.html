@@ -1,975 +1,377 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>SDH4114 — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide icons (обычная версия, не React) -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body {
-      min-height: 100vh;
-      background-color: #000;
-      color: #fff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-      overflow-x: hidden;
-    }
-  </style>
-</head>
-<body>
-  <div class="min-h-screen bg-black text-white overflow-x-hidden font-mono">
-    <!-- Diagonal Background Elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-orange-600/10 to-transparent transform rotate-12"></div>
-      <div class="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-blue-800/10 to-transparent transform -rotate-12"></div>
-      <div class="absolute top-1/2 left-1/4 w-96 h-1 bg-orange-500/20 transform -rotate-45"></div>
-      <div class="absolute top-1/3 right-1/4 w-64 h-1 bg-blue-500/20 transform rotate-45"></div>
-    </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+      content="Haos is a programmer and student from Baku building developer tools, programming languages, machine-learning systems, and interactive projects."
+    />
+    <meta name="theme-color" content="#f2f0e9" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SDH4114 — Developer portfolio" />
+    <meta
+      property="og:description"
+      content="Tools, languages, intelligent systems, and selected experiments by Haos."
+    />
+    <meta property="og:url" content="https://sdh4114.github.io/" />
+    <meta property="og:image" content="https://sdh4114.github.io/favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://sdh4114.github.io/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="index.css" />
+    <title>SDH4114 — Developer portfolio</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-orange-500/30">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-2 h-2 bg-orange-500 animate-pulse"></div>
-          <span id="glitchText" class="text-2xl font-bold text-orange-500">
-            SDH4114 理想的
-          </span>
-        </div>
-        <div class="flex gap-6">
-          <button
-            data-section-btn="home"
-            class="nav-btn uppercase tracking-wider transition-all text-orange-500"
-          >
-            HOME
-          </button>
-          <button
-            data-section-btn="projects"
-            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
-          >
-            PROJECTS
-          </button>
-          <button
-            data-section-btn="about"
-            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
-          >
-            ABOUT
-          </button>
-          <button
-            data-section-btn="contact"
-            class="nav-btn uppercase tracking-wider transition-all text-gray-400 hover:text-orange-500"
-          >
-            CONTACT
-          </button>
-        </div>
-        <div class="flex gap-4">
-          <a
-            href="https://github.com/SDH4114"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-orange-500 transition-colors"
-          >
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-          <a
-            href="https://t.me/sdhaos4114"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-orange-500 transition-colors"
-          >
-            <i data-lucide="send" class="w-5 h-5"></i>
-          </a>
-          <a
-            href="https://t.me/BreakLoop"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-orange-500 transition-colors"
-          >
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-          </a>
-        </div>
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#home" aria-label="SDH4114, home">
+        SDH<span>/4114</span>
+      </a>
+
+      <div class="header-note" aria-label="Location and focus">
+        <span class="status-dot" aria-hidden="true"></span>
+        Baku · Building in public
       </div>
-    </nav>
 
-    <!-- Hero Section (HOME) -->
-    <section
-      id="home"
-      class="relative min-h-screen flex items-center justify-center pt-20"
-    >
-      <div class="max-w-7xl mx-auto px-6 w-full">
-        <div class="relative">
-          <!-- Diagonal Orange Bars - Crossed -->
-          <div class="absolute -left-32 top-20 w-96 h-2 bg-orange-500 transform -rotate-45"></div>
-          <div class="absolute -left-24 top-12 w-80 h-1 bg-orange-400/60 transform -rotate-45"></div>
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-button
+      >
+        <span>Menu</span>
+        <span aria-hidden="true">↗</span>
+      </button>
 
-          <div class="relative z-10">
-            <div class="inline-block mb-4">
-              <span
-                class="px-4 py-1 bg-orange-500/20 border border-orange-500 text-orange-500 text-sm uppercase tracking-wider"
-              >
-                プログラマー
-              </span>
-            </div>
+      <nav
+        id="site-navigation"
+        class="site-navigation"
+        aria-label="Primary navigation"
+        data-menu
+      >
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-            <h1 class="text-8xl font-black mb-6 relative">
-              <span class="text-orange-500">DEVELOPER</span>
-              <div
-                class="absolute -bottom-4 left-0 w-32 h-1 bg-gradient-to-r from-orange-500 to-transparent"
-              ></div>
-            </h1>
-
-            <div class="flex items-center gap-4 mb-8">
-              <div class="w-16 h-1 bg-blue-500"></div>
-              <p class="text-2xl text-gray-400 uppercase tracking-wider">
-                Born 2010 / Baku
-              </p>
-            </div>
-
-            <p class="text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
-              Создаю
-              <span class="text-orange-500 font-bold">цифровые миры</span>
-              через код. Программист, художник, и исследователь
-              киберпространства.
-            </p>
-
-            <div class="flex gap-4 flex-wrap">
-              <button
-                data-goto="projects"
-                class="group px-8 py-4 bg-orange-500 hover:bg-orange-600 transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
-              >
-                Смотреть работы
-                <i
-                  data-lucide="chevron-right"
-                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                ></i>
-              </button>
-              <button
-                data-goto="contact"
-                class="px-8 py-4 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold"
-              >
-                Связаться
-              </button>
-            </div>
-          </div>
-
-          <!-- Decorative Elements -->
-          <div
-            class="absolute -right-20 bottom-20 text-9xl font-black text-white/5 transform rotate-12"
-          >
-            2010
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section
-      id="projects"
-      class="section hidden min-h-screen py-32 px-6"
-    >
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
-            <div class="w-3 h-3 bg-orange-500"></div>
-            PROJECTS
-            <span class="text-2xl text-gray-500 ml-4">プロジェクト</span>
-          </h2>
-          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
-        </div>
-
-        <!-- Featured Projects -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-2">
-            <div class="w-2 h-2 bg-orange-500"></div>
-            FEATURED 特集
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Battlefield 64 -->
-          <div
-            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
-            ></div>
-            <div class="p-6 relative z-10">
-              <div class="flex items-start justify-between mb-4">
-                <h3
-                  class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors">
-                  Battlefield 64
-                </h3>
-                <a
-                  href="https://github.com/SDH4114/Battlefield-64"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-gray-400 hover:text-orange-500 transition-colors"
-                >
-                  <i data-lucide="external-link" class="w-5 h-5"></i>
-                </a>
-              </div>
-
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">
-                Designed for strategy lovers who want a calm, beautiful, and unique chess experience. 
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                  >HTML</span
-                >
-                <span
-                  class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                  >CSS</span
-                >
-                <span
-                  class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                  >JavaScript</span
-                >
-              </div>
-
-              <!-- Красивая кнопка на живой сайт -->
-              <a
-                href="https://sdh4114.github.io/Battlefield-64/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 font-semibold"
-              >
-                <i data-lucide="monitor" class="w-4 h-4"></i>
-                <span>Play Now</span>
-              </a>
-
-              <div
-                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-              ></div>
-            </div>
-          </div>
-            <!-- Glitch Strike -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-            >
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
-              ></div>
-              <div class="p-6 relative z-10">
-                <div class="flex items-start justify-between mb-4">
-                  <h3
-                    class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
-                  >
-                    Glitch Strike: Operation Bug
-                  </h3>
-                  <a
-                    href="https://github.com/SDH4114/Glitch-Strike-Operation-Bug"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-orange-500 transition-colors"
-                  >
-                    <i data-lucide="external-link" class="w-5 h-5"></i>
-                  </a>
-                </div>
-                <p class="text-gray-400 mb-4 text-sm leading-relaxed">
-                  Киберпанк проект с глитч-эффектами и мрачной атмосферой.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >C#</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >Unity</span
-                  >
-                </div>
-                <div
-                  class="h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Duck Of Apocalypse -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-            >
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:bg-orange-500/20 transition-all"
-              ></div>
-              <div class="p-6 relative z-10">
-                <div class="flex items-start justify-between mb-4">
-                  <h3
-                    class="text-xl font-bold text-orange-500 group-hover:text-orange-400 transition-colors"
-                  >
-                    Duck Of Apocalypse
-                  </h3>
-                  <a
-                    href="https://github.com/SDH4114/Duck-Of-Apocalypse"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-orange-500 transition-colors"
-                  >
-                    <i data-lucide="external-link" class="w-5 h-5"></i>
-                  </a>
-                </div>
-                <p class="text-gray-400 mb-4 text-sm leading-relaxed">
-                  Open source. Duck Of Apocalypse is open source UI powered by Electron + xterm.js.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >Electron</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >xterm.js</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >Rust</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-blue-900/30 border border-blue-700/50 text-blue-400 uppercase tracking-wider"
-                    >Makefile</span
-                  >
-                </div>
-                <div
-                  class="h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Other Projects -->
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <div class="w-2 h-2 bg-blue-500"></div>
-            MORE PROJECTS その他
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Mafiya Telegram Bot -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
-            >
-              <div class="p-6">
-                <div class="flex items-start justify-between mb-3">
-                  <h3 class="text-lg font-bold text-orange-500">
-                    Mafiya Telegram Bot
-                  </h3>
-                  <a
-                    href="https://github.com/SDH4114/mafiya-telegram-bot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-blue-500 transition-colors"
-                  >
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                  </a>
-                </div>
-                <p class="text-gray-400 mb-3 text-sm">
-                  Telegram бот для игры в мафию с полным функционалом.
-                </p>
-                <div class="flex flex-wrap gap-1">
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Python</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Telegram API</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Wald_AI -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
-            >
-              <div class="p-6">
-                <div class="flex items-start justify-between mb-3">
-                  <h3 class="text-lg font-bold text-orange-500">
-                    Wald_AI
-                  </h3>
-                  <a
-                    href="https://github.com/SDH4114/Wald_AI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-blue-500 transition-colors"
-                  >
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                  </a>
-                </div>
-                <p class="text-gray-400 mb-3 text-sm">
-                  Experimental AI project — playground for training and testing neural networks, prompts and models.
-                </p>
-                <div class="flex flex-wrap gap-1">
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Python</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Data Science</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >AI</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Liyer’s Club -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 hover:border-blue-500 transition-all duration-300"
-            >
-              <div class="p-6">
-                <div class="flex items-start justify-between mb-3">
-                  <h3 class="text-lg font-bold text-orange-500">
-                    Liyer’s Club
-                  </h3>
-                  <a
-                    href="https://github.com/SDH4114/Liyer-s-Club"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-blue-500 transition-colors"
-                  >
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                  </a>
-                </div>
-                <p class="text-gray-400 mb-3 text-sm">
-                  Story-driven project with mystery and psychological vibes — a club of characters with secrets, dialogues and choices.
-                </p>
-                <div class="flex flex-wrap gap-1">
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Story</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Game Design</span
-                  >
-                  <span
-                    class="px-2 py-1 text-xs bg-gray-800 text-gray-400 uppercase"
-                    >Script</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- GitHub Link -->
-        <div class="mt-12 text-center">
-          <a
-            href="https://github.com/SDH4114?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold"
-          >
-            <i data-lucide="github" class="w-5 h-5"></i>
-            Все репозитории на GitHub
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section
-      id="about"
-      class="section hidden min-h-screen py-32 px-6"
-    >
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
-            <div class="w-3 h-3 bg-orange-500"></div>
-            ABOUT
-            <span class="text-2xl text-gray-500 ml-4">私について</span>
-          </h2>
-          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-          <div class="relative">
-            <div
-              class="absolute -top-8 -left-8 text-9xl font-black text-orange-500/10">
-              15
-            </div>
-            <div
-              class="relative z-10 bg-gradient-to-br from-gray-900 to-black border-l-4 border-orange-500 p-8">
-              <h3 class="text-3xl font-bold mb-4 text-orange-500">
-                Юный разработчик
-              </h3>
-              <p class="text-gray-300 leading-relaxed mb-4">
-                Родился в 2010 году в Баку. Программирование — это не только
-                навык, но и способ создавать новые миры.
-              </p>
-              <p class="text-gray-300 leading-relaxed">
-                Каждая строка кода — возможность воплотить идею в реальность,
-                каждый проект — новое приключение в цифровом мире.
-              </p>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div
-              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
-            >
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-2 h-2 bg-orange-500"></div>
-                <h4 class="text-xl font-bold text-white">Навыки 技能</h4>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >HTML/CSS</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >Java</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >JAVASCRIPT</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >C#</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >C++</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >GIT</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >DATA SCINCE</span>
-                <span
-                  class="px-4 py-2 bg-orange-500/20 border border-orange-500 text-orange-500 uppercase text-sm tracking-wider"
-                  >PYTHON</span>
-              </div>
-            </div>
-
-            <div
-              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
-            >
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-2 h-2 bg-blue-500"></div>
-                <h4 class="text-xl font-bold text-white">Локация 位置</h4>
-              </div>
-              <p class="text-gray-300">Baku, Azerbaijan</p>
-            </div>
-
-            <div
-              class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6"
-            >
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-2 h-2 bg-orange-500"></div>
-                <h4 class="text-xl font-bold text-white">Возраст 年齢</h4>
-              </div>
-              <p class="text-gray-300">15 лет (Born 2010)</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interests -->
-        <div class="mb-16">
-          <h3 class="text-4xl font-bold mb-8 flex items-center gap-4">
-            <div class="w-2 h-2 bg-orange-500"></div>
-            ИНТЕРЕСЫ 趣味
-          </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Программирование -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
-            >
-              <div
-                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
-              ></div>
-              <div class="relative z-10">
-                <i
-                  data-lucide="code"
-                  class="text-orange-500 mb-4 w-8 h-8"
-                ></i>
-                <h4
-                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
-                >
-                  Программирование
-                </h4>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
-                  разработка
-                </p>
-              </div>
-            </div>
-
-            <!-- Рисование -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
-            >
-              <div
-                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
-              ></div>
-              <div class="relative z-10">
-                <i
-                  data-lucide="palette"
-                  class="text-orange-500 mb-4 w-8 h-8"
-                ></i>
-                <h4
-                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
-                >
-                  Рисование
-                </h4>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
-                  творчество
-                </p>
-              </div>
-            </div>
-
-            <!-- Чтение -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
-            >
-              <div
-                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
-              ></div>
-              <div class="relative z-10">
-                <i
-                  data-lucide="book-open"
-                  class="text-orange-500 mb-4 w-8 h-8"
-                ></i>
-                <h4
-                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
-                >
-                  Чтение
-                </h4>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
-                  литература
-                </p>
-              </div>
-            </div>
-
-            <!-- Эксперименты -->
-            <div
-              class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 p-6 transition-all duration-300"
-            >
-              <div
-                class="absolute top-0 right-0 w-full h-full bg-orange-500/5 transform scale-0 group-hover:scale-100 transition-transform origin-top-right"
-              ></div>
-              <div class="relative z-10">
-                <i
-                  data-lucide="terminal"
-                  class="text-orange-500 mb-4 w-8 h-8"
-                ></i>
-                <h4
-                  class="text-lg font-bold mb-2 text-white group-hover:text-orange-500 transition-colors"
-                >
-                  Эксперименты
-                </h4>
-                <p class="text-sm text-gray-500 uppercase tracking-wider">
-                  исследование
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section
-      id="contact"
-      class="section hidden min-h-screen py-32 px-6"
-    >
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <h2 class="text-6xl font-black mb-4 flex items-center gap-4">
-            <div class="w-3 h-3 bg-orange-500"></div>
-            CONTACT
-            <span class="text-2xl text-gray-500 ml-4">連絡先</span>
-          </h2>
-          <div class="w-48 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <!-- GitHub -->
-          <a
-            href="https://github.com/SDH4114"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
-            ></div>
-            <div class="p-8 relative z-10">
-              <div class="flex items-center justify-between mb-4">
-                <i
-                  data-lucide="github"
-                  class="text-orange-500 group-hover:scale-110 transition-transform w-10 h-10"
-                ></i>
-                <i
-                  data-lucide="external-link"
-                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
-              >
-                GitHub
-              </h3>
-              <p class="text-gray-400 font-mono">@SDH4114</p>
-              <div
-                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-              ></div>
-            </div>
-          </a>
-
-          <!-- Telegram -->
-          <a
-            href="https://t.me/sdhaos4114"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
-            ></div>
-            <div class="p-8 relative z-10">
-              <div class="flex items-center justify-between mb-4">
-                <i
-                  data-lucide="send"
-                  class="text-blue-500 group-hover:scale-110 transition-transform w-10 h-10"
-                ></i>
-                <i
-                  data-lucide="external-link"
-                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
-              >
-                Telegram
-              </h3>
-              <p class="text-gray-400 font-mono">@sdhaos4114</p>
-              <div
-                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-              ></div>
-            </div>
-          </a>
-
-          <!-- Telegram Channel -->
-          <a
-            href="https://t.me/BreakLoop"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-orange-500 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 transform rotate-45 translate-x-16 -translate-y-16 group-hover:opacity-20 transition-all"
-            ></div>
-            <div class="p-8 relative z-10">
-              <div class="flex items-center justify-between mb-4">
-                <i
-                  data-lucide="message-circle"
-                  class="text-blue-500 group-hover:scale-110 transition-transform w-10 h-10"
-                ></i>
-                <i
-                  data-lucide="external-link"
-                  class="text-gray-400 group-hover:text-orange-500 transition-colors w-5 h-5"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors"
-              >
-                Telegram Channel
-              </h3>
-              <p class="text-gray-400 font-mono">@BreakLoop</p>
-              <div
-                class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-500"
-              ></div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Additional Info -->
-        <div
-          class="bg-gradient-to-br from-gray-900 to-black border-l-4 border-orange-500 p-8"
-        >
-          <h3 class="text-3xl font-bold mb-4 text-orange-500">
-            Давай создадим что-то крутое вместе!
-          </h3>
-          <p class="text-gray-300 leading-relaxed mb-4">
-            Всегда открыт к новым идеям и коллаборациям. Если у тебя есть
-            интересный проект или просто хочешь обсудить технологии — пиши в
-            любую из моих соцсетей!
+    <main id="main-content">
+      <section id="home" class="hero" data-section>
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Independent developer · Baku, Azerbaijan</p>
+          <h1>I build tools, languages and intelligent systems.</h1>
+          <p class="hero-intro">
+            I'm Haos, a programmer and student from Baku. I work across
+            Python, Rust, machine learning and developer tooling — turning
+            ideas into software people can actually run, inspect and use.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="https://t.me/sdhaos4114"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
-            >
-              <i data-lucide="send" class="w-5 h-5"></i>
-              Написать в Telegram
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">
+              Explore selected work
+              <span aria-hidden="true">↓</span>
             </a>
             <a
-              href="https://t.me/BreakLoop"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-6 py-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black transition-all duration-300 uppercase tracking-wider font-bold flex items-center gap-2"
-            >
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Подписаться на канал
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="relative py-12 px-6 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-orange-500 animate-pulse"></div>
-            <span class="text-xl font-bold">SDH4114</span>
-          </div>
-
-          <div class="text-gray-500 text-sm uppercase tracking-wider">
-            2025 © Developer Portfolio
-          </div>
-
-          <div class="flex gap-4">
-            <a
+              class="text-link"
               href="https://github.com/SDH4114"
               target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-400 hover:text-orange-500 transition-colors"
+              rel="noreferrer noopener"
             >
-              <i data-lucide="github" class="w-5 h-5"></i>
-            </a>
-            <a
-              href="https://t.me/sdhaos4114"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-400 hover:text-orange-500 transition-colors"
-            >
-              <i data-lucide="send" class="w-5 h-5"></i>
-            </a>
-            <a
-              href="https://t.me/BreakLoop"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-400 hover:text-orange-500 transition-colors"
-            >
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              GitHub profile <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
-      </div>
+
+        <aside class="hero-aside" aria-label="Current focus" data-reveal>
+          <span class="hero-index" aria-hidden="true">01</span>
+          <div class="focus-note">
+            <span>Current direction</span>
+            <p>Readable systems, local AI, and software that stays understandable.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="work" class="work" aria-labelledby="work-title" data-section>
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">Selected work · 2025–2026</p>
+          <h2 id="work-title">Projects built to be used.</h2>
+          <p>
+            A small selection spanning interactive software, developer
+            experience, language design, and machine learning.
+          </p>
+        </header>
+
+        <div class="featured-work">
+          <article class="feature feature-battlefield" data-reveal>
+            <div class="feature-visual battlefield-visual" aria-hidden="true">
+              <div class="chess-grid">
+                <span class="chess-piece piece-a">♞</span>
+                <span class="chess-piece piece-b">♟</span>
+                <span class="chess-piece piece-c">♜</span>
+              </div>
+              <span class="visual-caption">quiet strategy / pixel field</span>
+            </div>
+
+            <div class="feature-copy">
+              <div class="project-kicker">
+                <span>01</span>
+                <span>Interactive game</span>
+              </div>
+              <h3>Battlefield 64</h3>
+              <p>
+                A top-down pixel-art chess game with custom pieces, pastel
+                boards, smooth movement and a calm retro atmosphere.
+              </p>
+              <ul class="tech-list" aria-label="Technologies">
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <div class="project-actions">
+                <a
+                  class="button button-light"
+                  href="https://sdh4114.github.io/Battlefield-64/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Live demo <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  class="text-link"
+                  href="https://github.com/SDH4114/Battlefield-64"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Source code <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature feature-coffe" data-reveal>
+            <div class="feature-copy">
+              <div class="project-kicker">
+                <span>02</span>
+                <span>Developer tool</span>
+              </div>
+              <h3>Coffe.nvim</h3>
+              <p>
+                An installable Neovim 0.11+ distribution and Lua plugin with
+                projects, search, Git and diff tools, Markdown workflows,
+                quick notes, automatic sessions and an offline-capable core.
+              </p>
+              <ul class="tech-list" aria-label="Technologies">
+                <li>Lua</li>
+                <li>Neovim</li>
+                <li>Shell</li>
+              </ul>
+              <div class="project-actions">
+                <a
+                  class="button button-primary"
+                  href="https://sdh4114.github.io/Coffe_nvim/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Live demo <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  class="text-link"
+                  href="https://github.com/SDH4114/Coffe_nvim"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Source code <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="feature-visual editor-visual" aria-hidden="true">
+              <div class="editor-bar">
+                <span>COFFE.NVIM</span>
+                <span>main.lua</span>
+              </div>
+              <div class="editor-body">
+                <span><b>01</b> local project = <i>"make it useful"</i></span>
+                <span><b>02</b> local friction = <i>false</i></span>
+                <span><b>03</b></span>
+                <span><b>04</b> return build(project)</span>
+              </div>
+              <div class="editor-footer">
+                <span>NORMAL</span>
+                <span>Lua · UTF-8</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-index" aria-label="More selected projects">
+          <article class="project-row" data-reveal>
+            <div class="project-number">03</div>
+            <div class="project-summary">
+              <p class="project-type">Programming language · Rust</p>
+              <h3>Shine</h3>
+            </div>
+            <p class="project-description">
+              A readable programming language written in Rust and growing
+              toward scientific, data, ML, CLI and server workloads. Its
+              current runtime combines a tree-walking evaluator with a compact
+              numeric VM.
+            </p>
+            <a
+              class="round-link"
+              href="https://github.com/SDH4114/shine"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="View Shine repository"
+            >↗</a>
+          </article>
+
+          <article class="project-row" data-reveal>
+            <div class="project-number">04</div>
+            <div class="project-summary">
+              <p class="project-type">Machine learning · Python</p>
+              <h3>ai_models</h3>
+            </div>
+            <p class="project-description">
+              My experimental Python workspace for training, testing and
+              understanding machine-learning models, including the early
+              Aminatron work.
+            </p>
+            <a
+              class="round-link"
+              href="https://github.com/SDH4114/ai_models"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="View ai_models repository"
+            >↗</a>
+          </article>
+
+          <article class="project-row" data-reveal>
+            <div class="project-number">05</div>
+            <div class="project-summary">
+              <p class="project-type">Language model · Research</p>
+              <h3>dante_LM</h3>
+            </div>
+            <p class="project-description">
+              An early language-model experiment. The repository is
+              intentionally small and currently documents the starting point
+              rather than a finished model.
+            </p>
+            <a
+              class="round-link"
+              href="https://github.com/SDH4114/dante_LM"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="View dante_LM repository"
+            >↗</a>
+          </article>
+
+          <article class="project-row project-row-accent" data-reveal>
+            <div class="project-number">06</div>
+            <div class="project-summary">
+              <p class="project-type">Object detection · Keras / Gradio</p>
+              <h3>Aminatron</h3>
+            </div>
+            <p class="project-description">
+              A multi-object detection project that returns object classes,
+              confidence scores, bounding boxes and an annotated image, with a
+              Gradio app on Hugging Face.
+            </p>
+            <a
+              class="round-link"
+              href="https://huggingface.co/sdhaos/Aminatron"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="View Aminatron on Hugging Face"
+            >↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-title" data-section>
+        <div class="about-statement" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">I learn by building.</h2>
+          <p>
+            My work moves between developer experience, programming language
+            design, machine learning and small interactive worlds. I care
+            about clear systems, useful interfaces and the freedom to
+            understand how the whole thing works.
+          </p>
+        </div>
+
+        <aside class="capability-index" aria-label="Areas of practice" data-reveal>
+          <p class="index-title">Areas of practice</p>
+          <ol>
+            <li><span>01</span> Python &amp; data science</li>
+            <li><span>02</span> Rust &amp; language design</li>
+            <li><span>03</span> Machine learning</li>
+            <li><span>04</span> Automation &amp; developer tools</li>
+          </ol>
+        </aside>
+
+        <div class="profile-links" data-reveal>
+          <a
+            href="https://github.com/SDH4114"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>GitHub</span>
+            <strong>Code, tools and experiments</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://huggingface.co/sdhaos"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>Hugging Face</span>
+            <strong>Models and machine-learning work</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-title" data-section>
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">Contact · Channel 07</p>
+          <h2 id="contact-title">Let's make something worth opening.</h2>
+          <p>
+            Follow the studio for project updates, or message me directly on
+            Telegram.
+          </p>
+        </div>
+
+        <div class="contact-links" data-reveal>
+          <a
+            href="https://t.me/sdhaos4114"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>Personal Telegram</span>
+            <strong>@sdhaos4114</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://t.me/BreakRulesStudio"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span>Break Rules Studio</span>
+            <strong>@BreakRulesStudio</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>SDH4114 · Baku, Azerbaijan</p>
+      <p>Building in public.</p>
+      <a href="#home">Back to top ↑</a>
     </footer>
-  </div>
 
-  <!-- ===== JS: глитч + переключение секций + иконки ===== -->
-  <script>
-    // Lucide icons
-    lucide.createIcons();
-
-    // Глитч-текст
-    const glitchEl = document.getElementById("glitchText");
-    const original = "SDH4114 理想的";
-
-    function startGlitch() {
-      const chars =
-        "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      let iterations = 0;
-      const interval = setInterval(() => {
-        const text = original
-          .split("")
-          .map((ch, index) => {
-            if (index < iterations) return original[index];
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("");
-        glitchEl.textContent = text;
-
-        if (iterations >= 7) {
-          clearInterval(interval);
-          glitchEl.textContent = original;
-        }
-        iterations += 1 / 4;
-      }, 70);
-    }
-
-    setInterval(startGlitch, 5000);
-
-    // Переключение секций
-    const sections = {
-      projects: document.getElementById("projects"),
-      about: document.getElementById("about"),
-      contact: document.getElementById("contact"),
-    };
-
-    function setActiveSection(name) {
-      // показываем / скрываем секции
-      Object.entries(sections).forEach(([key, el]) => {
-        if (!el) return;
-        if (key === name) el.classList.remove("hidden");
-        else el.classList.add("hidden");
-      });
-
-      // подсветка кнопок
-      document.querySelectorAll(".nav-btn").forEach((btn) => {
-        const sec = btn.getAttribute("data-section-btn");
-        if (sec === name) {
-          btn.classList.remove("text-gray-400");
-          btn.classList.add("text-orange-500");
-        } else if (sec !== "home") {
-          btn.classList.add("text-gray-400");
-          btn.classList.remove("text-orange-500");
-        } else {
-          // home
-          if (name === "home") {
-            btn.classList.add("text-orange-500");
-            btn.classList.remove("text-gray-400");
-          } else {
-            btn.classList.remove("text-orange-500");
-            btn.classList.add("text-gray-400");
-          }
-        }
-      });
-    }
-
-    // Клики по навигации
-    document.querySelectorAll("[data-section-btn]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const sec = btn.getAttribute("data-section-btn");
-        if (sec === "home") {
-          setActiveSection("home");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-          setActiveSection(sec);
-          const target = sections[sec];
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }
-      });
-    });
-
-    // Кнопки "Смотреть работы" / "Связаться"
-    document.querySelectorAll("[data-goto]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const sec = btn.getAttribute("data-goto");
-        setActiveSection(sec);
-        const target = sections[sec];
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
-
-    // Стартовое состояние — только home
-    setActiveSection("home");
-  </script>
-</body>
+    <script src="index.js" defer></script>
+  </body>
 </html>
